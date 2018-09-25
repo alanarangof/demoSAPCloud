@@ -14,15 +14,13 @@ sap.ui.jsview("demosapcloud.pagos", {
 	*/ 
 	createContent : function(oController) {
 		
-		var img = new sap.m.Image({
-			src:"https://pbs.twimg.com/media/BwONPYgIcAAIimZ.jpg"
-		});
+		
 		var oPage = new sap.m.Page({
 			title: "Pagos",
 			showNavButton:true,
 			navButtonPress:function(oEvt){app.back();},
 			content: [
-				img
+				
 			]
 		});
  		return oPage;
