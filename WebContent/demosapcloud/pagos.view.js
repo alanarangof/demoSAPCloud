@@ -23,7 +23,7 @@ sap.ui.jsview("demosapcloud.pagos", {
 				
 			]
 		});
- 		return oPage;
+		 return oPage;
 	}
 
 });

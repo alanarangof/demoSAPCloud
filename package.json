@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/alanarangof/demoSAPCloud/issues"
   },
-  "homepage": "https://github.com/alanarangof/demoSAPCloud#readme"
+  "homepage": "https://github.com/alanarangof/demoSAPCloud#readme",
+  "dependencies": {
+    "@openui5/sap.m": "^1.58.2",
+    "@openui5/sap.ui.core": "^1.58.2",
+    "@types/openui5": "^1.40.1"
+  }
 }
