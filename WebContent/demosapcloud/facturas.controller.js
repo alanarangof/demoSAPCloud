@@ -4,11 +4,11 @@ sap.ui.controller("demosapcloud.facturas", {
 * Called when a controller is instantiated and its View controls (if available) are already created.
 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
 * @memberOf demosapcloud.facturas
-*//*
-*
-//	onInit: function() {
-//
-//	},
+*/
+
+onInit: function() {
+   
+},
 
 /**
 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered

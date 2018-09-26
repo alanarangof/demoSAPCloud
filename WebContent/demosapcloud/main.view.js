@@ -13,22 +13,32 @@ sap.ui.jsview("demosapcloud.main", {
 	* @memberOf demosapcloud.main
 	*/ 
 	createContent : function(oController) {
-		var sText = "testtext";
-		var oTileTemp = new sap.m.StandardTile("idTile",{
-			icon:"{icon}",
-			title:"{Name}",
-			info:"{Descrip}",
-			press: [oController.goToNextPage,oController]
+	
+		var oTileFacturas = new sap.m.StandardTile({
+			icon:"{lang>/main/tileFacturas/icon}",
+			title:"{lang>/main/tileFacturas/Name}",
+			info:"{lang>/main/tileFacturas/Descrip}",
+			press: [oController.goToFacturasPage,oController]
 		});
-		
-		var oTileCont = new sap.m.TileContainer();
-		
-		oTileCont.bindAggregation("tiles","/tabs",oTileTemp);
-		
+		var oTilePagos = new sap.m.StandardTile({
+			icon:"{lang>/main/tilePagos/icon}",
+			title:"{lang>/main/tilePagos/Name}",
+			info:"{lang>/main/tilePagos/Descrip}",
+			press: [oController.goToPagosPage,oController]
+		});
+		var oTileCont = new sap.m.TileContainer("idTileCont",{
+			tiles:[
+				oTileFacturas,
+				oTilePagos
+			]
+		});
 		var oPage = new sap.m.Page({
-			title: "Bienvenido",
+			showNavButton:true,
+			navButtonPress:function(oEvt){app.back();},
+			title: "{lang>/main/title}",
 			content: [
 				oTileCont
+				
 			]
 		});
  		return oPage;

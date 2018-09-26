@@ -36,45 +36,45 @@ sap.ui.jsview("demosapcloud.facturas", {
 		
 		var oCol1 = new sap.ui.table.Column({
 			label:new sap.m.Label({text:"Factura"}),
-			template:new sap.m.Text({text:"{Factura}"})
+			template:new sap.m.Text({text:"{data>Factura}"})
 		});
 		var oCol2 = new sap.ui.table.Column({
 			label:new sap.m.Label({text:"Sociedad"}),
-			template:new sap.m.Text({text:"{Sociedad}"})
+			template:new sap.m.Text({text:"{data>Sociedad}"})
 		});
 		var oCol3 = new sap.ui.table.Column({
 			label:new sap.m.Label({text:"Tipo de Comprobante"}),
-			template:new sap.m.Text({text:"{TipoComprobante}"})
+			template:new sap.m.Text({text:"{data>TipoComprobante}"})
 		});
 		var oCol4 = new sap.ui.table.Column({
 			label:new sap.m.Label({text:"Fecha"}),
-			template:new sap.m.Text({text:"{Fecha}"})
+			template:new sap.m.Text({text:"{data>Fecha}"})
 		});
 		var oCol5 = new sap.ui.table.Column({
 			label:new sap.m.Label({text:"Neto"}),
 			template:new sap.m.Text({
-				text:"{Neto}",
+				text:"{data>Neto}",
 				textAlign:sap.ui.core.TextAlign.Right
 				})
 		});
 		var oCol6 = new sap.ui.table.Column({
 			label:new sap.m.Label({text:"Bruto"}),
 			template:new sap.m.Text({
-				text:"{Bruto}",
+				text:"{data>Bruto}",
 				textAlign:sap.ui.core.TextAlign.Right
 				})
 		});
 		var oCol7 = new sap.ui.table.Column({
 			label:new sap.m.Label({text:"Moneda"}),
-			template:new sap.m.Text({text:"{Moneda}"})
+			template:new sap.m.Text({text:"{data>Moneda}"})
 		});
 		var oCol8 = new sap.ui.table.Column({
 			label:new sap.m.Label({text:"NroPago"}),
-			template:new sap.m.Text({text:"{NroPago}"})
+			template:new sap.m.Text({text:"{data>NroPago}"})
 		});
 		var oCol9 = new sap.ui.table.Column({
 			label:new sap.m.Label({text:"FechaPago"}),
-			template:new sap.m.Text({text:"{FechaPago}"})
+			template:new sap.m.Text({text:"{data>FechaPago}"})
 		});
 		
 		var oTable = new sap.ui.table.Table({
@@ -92,7 +92,7 @@ sap.ui.jsview("demosapcloud.facturas", {
 			]
 		});
 		
-		oTable.bindRows("/facturas");
+		oTable.bindRows("data>/facturas");
 		
 		var oPage = new sap.m.Page({
 			title: "Facturas",

@@ -15,7 +15,11 @@
 
 		<script>
 				sap.ui.localResources("demosapcloud");
-				
+
+				var pageLogin = sap.ui.view({
+					id:"idloginpage", 
+					viewName:"demosapcloud.login", 
+					type:sap.ui.core.mvc.ViewType.JS});
 				var pageMain = sap.ui.view({
 					id:"idmainpage", 
 					viewName:"demosapcloud.main", 
@@ -28,10 +32,11 @@
 					id:"idpagospage", 
 					viewName:"demosapcloud.pagos", 
 					type:sap.ui.core.mvc.ViewType.JS});
-				
+
 				var app = new sap.m.App({
-					initialPage:"idmainpage",
+					initialPage:"idloginpage",
 					pages:[
+						pageLogin,
 						pageMain,
 						pageFacturas,
 						pagePagos
