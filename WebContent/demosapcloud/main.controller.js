@@ -19,45 +19,18 @@ onBeforeRendering: function() {
 
 },
 goToFacturasPage : function(oEvt){
-	var oData = {
-		facturas:[{
-			Factura: "01f12345670",
-			Sociedad: "Soc1",
-			TipoComprobante: "FC",
-			Fecha: "18/04/2018",
-			Neto: "35.415,12",
-			Bruto: "38.754,22",
-			Moneda: "ARS",
-			NroPago: "0123456780",
-			FechaPago: "20/04/2018"
-		},{
-			Factura: "01f12345671",
-			Sociedad: "Soc1",
-			TipoComprobante: "FC",
-			Fecha: "19/05/2018",
-			Neto: "35.975,87",
-			Bruto: "38.722,77",
-			Moneda: "ARS",
-			NroPago: "0123456781",
-			FechaPago: "20/05/2018"
-		},{
-			Factura: "01f12345672",
-			Sociedad: "Soc2",
-			TipoComprobante: "FC",
-			Fecha: "15/07/2018",
-			Neto: "35.654,64",
-			Bruto: "38.123,54",
-			Moneda: "ARS",
-			NroPago: "0123456782",
-			FechaPago: "20/07/2018"
-		}]
-		
-	};
-	var oModel = new sap.ui.model.json.JSONModel(oData);
-	sap.ui.getCore().setModel(oModel,"data");
+
+	$.getJSON("data/facturas.json",function(data){
+		var oFacturasModel = new sap.ui.model.json.JSONModel(data);
+		sap.ui.getCore().setModel(oFacturasModel,"data");
+	});
 	app.to("idfacturaspage");	
 },
 goToPagosPage : function(oEvt){
+	$.getJSON("data/pagos.json",function(data){
+		var oPagosModel = new sap.ui.model.json.JSONModel(data);
+		sap.ui.getCore().setModel(oPagosModel,"data");
+	});
 	app.to("idpagospage");
 	
 },

@@ -12,25 +12,32 @@ sap.ui.jsview("demosapcloud.login", {
     */ 
     createContent: function(oController) {
         var oUser = new sap.m.Input("idUser",{
-            placeholder: "Enter your name",
-            description:"ID"
+            placeholder: "{lang>/login/user/ph}",
+            description:"{lang>/login/user/tag}"
         });
         var oPass = new sap.m.Input("idPass",{
-            placeholder: "Enter your password",
-            description:"Password"
+            placeholder: "{lang>/login/pass/ph}",
+            description:"{lang>/login/pass/tag}"
         });
         var oSubmit = new sap.m.Button("idButton",{
-            text: "Submit",
+            text: "{lang>/login/submit}",
             press: [oController.loginUser,oController]
         });
         var oErrorLabel = new sap.m.Text("idErrorLabel");
+        var oLangSwitch = new sap.m.Switch("idLangSwitch",{
+            customTextOff: "ESP",
+            customTextOn: "ENG",
+            state:false,
+            change:[oController.langSwitch,oController]
+        });
         var oPage = new sap.m.Page({
-           title: "Login",
+           title: "{lang>/login/title}",
            content: [
                oUser,
                oPass,
                oSubmit,
-               oErrorLabel
+               oErrorLabel,
+               oLangSwitch
            ]
         });
         return oPage;

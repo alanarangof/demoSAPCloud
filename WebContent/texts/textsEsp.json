@@ -1,0 +1,30 @@
+{
+    "main":{
+        "tileFacturas":{
+            "icon": "sap-icon://receipt",
+            "Name": "Facturas",
+            "Descrip": "Facturas y sus estados"
+        },
+        "tilePagos":{
+            "icon": "sap-icon://simple-payment",
+            "Name": "Pagos",
+            "Descrip": "Pagos y retenciones"
+        },
+        "title":"Bienvenido"
+    },
+    "login":{
+        "title":"Inicio de Sesion",
+        "user":{
+            "ph":"Ingrese su usuario",
+            "tag":"ID"
+        },
+        "pass":{
+            "ph":"Ingrese su contrasena",
+            "tag":"Contrasena"
+        },
+        "submit":"Ingresar",
+        "errores":{
+            "1":"Credenciales incorrectas"
+        }    
+    }
+}

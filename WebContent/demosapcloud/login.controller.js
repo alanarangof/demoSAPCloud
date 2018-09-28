@@ -5,7 +5,7 @@ sap.ui.controller("demosapcloud.login", {
     * @memberOf demosapcloud.login
     */
     onInit: function() {
-        
+        this.setLanguage("esp");
     },
 
     /**
@@ -23,52 +23,43 @@ sap.ui.controller("demosapcloud.login", {
         var sPassVal = sap.ui.getCore().byId("idPass").getValue();
         if (sPassVal==="12345"){
             if (sUserVal==="usuario"){
-                var oTextEsp = {
-                    main:{
-                        tileFacturas:{
-                            icon: "sap-icon://receipt",
-                            Name: "Facturas",
-                            Descrip: "Facturas y sus estados"
-                        },
-                        tilePagos:{
-                            icon: "sap-icon://simple-payment",
-                            Name: "Pagos",
-                            Descrip: "Pagos y retenciones"
-                        },
-                        title:"Bienvenido"
-                    }
-                };
-                var oTextModelEsp = new sap.ui.model.json.JSONModel(oTextEsp);
-                sap.ui.getCore().setModel(oTextModelEsp,"lang");
+                this.setLanguage("esp");
                 sap.ui.getCore().byId("idErrorLabel").setText("");
                 app.to("idmainpage");
             } else if(sUserVal==="user"){
-                var oTextEng = {
-                    main:{
-                        tileFacturas:{
-                            icon: "sap-icon://receipt",
-                            Name: "Invoices",
-                            Descrip: "Invoices and their state"
-                        },
-                        tilePagos:{
-                            icon: "sap-icon://simple-payment",
-                            Name: "Payments",
-                            Descrip: "Payments and retentions"
-                        },
-                        title:"Welcome"
-                    }
-            
-                };
-                var oTextModelEng = new sap.ui.model.json.JSONModel(oTextEng);
-                sap.ui.getCore().setModel(oTextModelEng,"lang");
+                this.setLanguage("eng");
                 sap.ui.getCore().byId("idErrorLabel").setText("");
                 app.to("idmainpage");
             }else
-                sap.ui.getCore().byId("idErrorLabel").setText("Invalid credentials");
+                sap.ui.getCore().byId("idErrorLabel").setText("{lang>/login/errores/1}");
         }else
-            sap.ui.getCore().byId("idErrorLabel").setText("Invalid credentials");
+            sap.ui.getCore().byId("idErrorLabel").setText("{lang>/login/errores/1}");
     },
 
+    langSwitch: function(){
+        if (sap.ui.getCore().byId("idLangSwitch").getState()){
+            this.setLanguage("eng");
+        }else{
+            this.setLanguage("esp");
+        }
+
+    },
+
+    setLanguage: function(lang){
+        if(lang==="eng"){
+            $.getJSON("texts/textsEng.json",function(data){
+                var oTextModelEng = new sap.ui.model.json.JSONModel(data);
+                sap.ui.getCore().setModel(oTextModelEng,"lang");
+            });
+            sap.ui.getCore().byId("idLangSwitch").setState(true);
+        }else{
+            $.getJSON("texts/textsEsp.json",function(data){
+                var oTextModelEsp = new sap.ui.model.json.JSONModel(data);
+                sap.ui.getCore().setModel(oTextModelEsp,"lang");
+            });
+            sap.ui.getCore().byId("idLangSwitch").setState(false);
+        }
+    },
     /**
     * Called when the View has been rendered (so its HTML is part of the document). Post-rendering manipulations of the HTML could be done here.
     * This hook is the same one that SAPUI5 controls get after being rendered.

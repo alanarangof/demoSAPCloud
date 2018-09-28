@@ -1,0 +1,30 @@
+{
+    "main":{
+        "tileFacturas":{
+            "icon": "sap-icon://receipt",
+            "Name": "Invoices",
+            "Descrip": "Invoices and their state"
+        },
+        "tilePagos":{
+            "icon": "sap-icon://simple-payment",
+            "Name": "Payments",
+            "Descrip": "Payments and retentions"
+        },
+        "title":"Welcome"
+    },
+    "login":{
+        "title":"User Login",
+        "user":{
+            "ph":"Enter user name",
+            "tag":"ID"
+        },
+        "pass":{
+            "ph":"Enter password",
+            "tag":"Pass"
+        },
+        "submit":"Login",
+        "errores":{
+            "1":"Incorrect credentials"
+        }    
+    }
+}

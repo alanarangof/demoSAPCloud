@@ -1,0 +1,33 @@
+{
+    "pagos":[{
+        "nro": "0112546784",
+        "fecha": "18/04/2018",
+        "total": "38.754,22",
+        "neto": "35.415,12",
+        "moneda": "ARS",
+        "forma": "Transferencia",
+        "cheque": "NA",
+        "lugar": "Bs.As.",
+        "sociedad": "Soc1"
+    },{
+        "nro": "0112546454",
+        "fecha": "19/05/2018",
+        "total": "38.722,77",
+        "neto": "35.975,87",
+        "moneda": "ARS",
+        "forma": "Transferencia",
+        "cheque": "NA",
+        "lugar": "Bs.As.",
+        "sociedad": "Soc1"
+    },{
+        "nro": "01125454644",
+        "fecha": "15/07/2018",
+        "total": "38.123,54",
+        "neto": "35.654,64",
+        "moneda": "ARS",
+        "forma": "Cheque",
+        "cheque": "28702064",
+        "lugar": "Bs.As.",
+        "sociedad": "Soc2"
+    }] 
+}
